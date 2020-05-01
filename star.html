@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (i = 1; i <= 5; i += 1) {
+        console.log("*");
+      }
+      console.log("------------");
+      document.write("<br/>");
+      for (i = 1; i <= 5; i += 1) {
+        console.log("*".repeat(i)); //repeat함수를 이용한다.
+      }
+      console.log("------------");
+      for (var i = 5; i >= 1; i -= 1) {
+        console.log(" ".repeat(5 - i) + "*".repeat(i)); //문자열과의 더하기의 결과는 문자열이 된다.
+      }
+      console.log("------------");
+      for (var i = 9; i >= 1; i -= 2) {
+        console.log(" ".repeat((9 - i) / 2) + "*".repeat(i));
+      }
+      console.log("------------");
+
+      // 보통 i는 0부터 시작한다. 그런경우 찍어낼때 i+1를 찍어내면 된다.!
+    </script>
+  </body>
+</html>
