@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      while (true) {
+        //큰 조건문
+        var x = Math.floor(Math.random() * 9) + 1;
+        var y = Math.floor(Math.random() * 9) + 1;
+        var m = x * y;
+        var 조건 = true;
+        while (조건) {
+          var 답 = prompt(String(x) + "x" + String(y) + "는?");
+          if (m === Number(답)) {
+            alert("정답입니다!");
+            조건 = false;
+            //정답이면 조건 => false, 위로올라가서 다시 true가 된 뒤에 정답이면 다시 false, 반복
+          } else {
+            alert("땡!"); //틀리면 while(조건)으로 넘어감
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
