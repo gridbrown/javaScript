@@ -1,4 +1,3 @@
-var bodyCon = document.body;
 var word = document.createElement("div");
 word.textContent = "햄버거";
 document.body.append(word);
