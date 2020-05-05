@@ -1,12 +1,18 @@
 var content = document.body;
+var number;
+var arr;
 
-var number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var arr = [];
+function pick() {
+  number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  arr = [];
 
-for (var i = 0; i < 4; i += 1) {
-  var num = number.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
-  arr.push(num);
+  for (var i = 0; i < 4; i += 1) {
+    var num = number.splice(Math.floor(Math.random() * (9 - i)), 1)[0];
+    arr.push(num);
+  }
 }
+
+pick();
 console.log(arr);
 var result = document.createElement("h1");
 document.body.append(result);
@@ -26,12 +32,7 @@ form.addEventListener("submit", function (e) {
     result.textContent = "홈런";
     input.value = "";
     input.focus();
-    var number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    var arr = [];
-    for (var i = 0; i < 4; i += 1) {
-      var num = number.splice(Math.floor(Math.random() * (9 - i)), 1)[0]; //ceil쓰면 undefiend뜸.(우리는 0~8이 필요하므로)
-      arr.push(num);
-    }
+    pick();
     count = 0; //정답시 초기화
   } else {
     //답이 틀리면
@@ -45,12 +46,7 @@ form.addEventListener("submit", function (e) {
         "10번넘게 틀려서 실패! 답은" + arr.join(",") + "입니다";
       input.value = "";
       input.focus();
-      var number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-      var arr = [];
-      for (var i = 0; i < 4; i += 1) {
-        var num = number.splice(Math.floor(Math.random() * (9 - i)), 1)[0]; //ceil쓰면 undefiend뜸.(우리는 0~8이 필요하므로)
-        arr.push(num);
-      }
+      pick();
       count = 0; // 10번넘게 틀려서 초기화
     } else {
       //10번 미만으로 틀린경우
