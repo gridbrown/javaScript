@@ -19,8 +19,77 @@ console.log(bonusPick, pick);
 
 var result = document.querySelector(".result");
 
-for (var i = 0; i < pick.length; i += 1) {
+function fillColor(num, result) {
   var ball = document.createElement("div");
-  ball.textContent = pick[i];
+  ball.textContent = num;
+  ball.style.display = "inline-block";
+  ball.style.border = "2px solid black";
+
+  ball.style.width = "40px";
+  ball.style.height = "40px";
+  ball.style.borderRadius = "50%";
+  ball.style.textAlign = "center";
+  ball.style.fontSize = "25px";
+  ball.style.fontWeight = "600";
+  ball.style.margin = "10px";
+  var bgColor;
+  if (num < 10) {
+    bgColor = "orangered";
+  } else if (num <= 20) {
+    bgColor = "orange";
+  } else if (num <= 30) {
+    bgColor = "yellow";
+  } else if (num <= 40) {
+    bgColor = "dodgerblue";
+  } else {
+    bgColor = "green";
+  }
+  ball.style.background = bgColor;
   result.appendChild(ball);
 }
+
+setTimeout(function 비동기콜백() {
+  fillColor(pick[0], result);
+}, 1000);
+
+setTimeout(function 비동기콜백() {
+  fillColor(pick[1], result);
+}, 2000);
+
+setTimeout(function 비동기콜백() {
+  fillColor(pick[2], result);
+}, 3000);
+
+setTimeout(function 비동기콜백() {
+  fillColor(pick[3], result);
+}, 4000);
+
+setTimeout(function 비동기콜백() {
+  fillColor(pick[4], result);
+}, 5000);
+
+setTimeout(function 비동기콜백() {
+  fillColor(pick[5], result);
+}, 6000);
+
+setTimeout(function 비동기콜백() {
+  var titleB = document.querySelector(".bonus-title");
+  titleB.textContent = "보너스!";
+}, 7000);
+
+setTimeout(function 비동기콜백() {
+  var bonus = document.querySelector(".bonus");
+  fillColor(bonusPick, bonus);
+}, 8000);
+
+function clickHandler() {
+  window.location.reload();
+}
+
+setTimeout(function 비동기콜백() {
+  var retry = document.querySelector(".retry");
+  var btn = document.createElement("button");
+  btn.addEventListener("click", clickHandler());
+  btn.textContent = "다시하기";
+  retry.append(btn);
+}, 9000);

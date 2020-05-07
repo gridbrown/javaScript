@@ -4,9 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .lotto {
+        margin-top: 40px;
+      }
+
+      .lotto,
+      .lotto-bonus {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .lotto-bonus {
+        flex-direction: column;
+      }
+      .bonus-title {
+        margin-top: 20px;
+      }
+    </style>
   </head>
   <body>
-    <div class="result"></div>
+    <div class="lotto">
+      <div class="result"></div>
+    </div>
+    <div class="lotto-bonus">
+      <div class="bonus-title"></div>
+      <div class="bonus"></div>
+    </div>
+    <div class="retry"></div>
     <script src="lotto.js"></script>
     <!-- 스크립트 태그가 위에있으면 안됨 -->
   </body>
