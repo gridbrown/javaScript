@@ -82,14 +82,13 @@ setTimeout(function 비동기콜백() {
   fillColor(bonusPick, bonus);
 }, 8000);
 
-function clickHandler() {
-  window.location.reload();
-}
-
 setTimeout(function 비동기콜백() {
   var retry = document.querySelector(".retry");
   var btn = document.createElement("button");
-  btn.addEventListener("click", clickHandler());
+  btn.addEventListener("click", function () {
+    window.location.reload();
+  });
   btn.textContent = "다시하기";
+  btn.className = "btn";
   retry.append(btn);
 }, 9000);
