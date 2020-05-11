@@ -48,6 +48,16 @@ function fillColor(num, result) {
   result.appendChild(ball);
 }
 
+for (var i = 0; i < pick.length; i++) {
+  //클로저 문제를 해결한 for문
+  (function (j) {
+    setTimeout(function () {
+      fillColor(pick[j], result);
+    }, (j + 1) * 1000);
+  })(i);
+}
+
+/* 
 setTimeout(function 비동기콜백() {
   fillColor(pick[0], result);
 }, 1000);
@@ -71,6 +81,8 @@ setTimeout(function 비동기콜백() {
 setTimeout(function 비동기콜백() {
   fillColor(pick[5], result);
 }, 6000);
+
+*/
 
 setTimeout(function 비동기콜백() {
   var titleB = document.querySelector(".bonus-title");
