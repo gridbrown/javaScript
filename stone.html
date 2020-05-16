@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+     
+      
       #rival-deck,
       #rival-hero,
       #rival-cards,
@@ -19,7 +21,14 @@
         display: inline-block;
         position: relative;
         border: 1px solid black;
+        margin-bottom: 10px;
       }
+
+      .card-name {
+        text-align: center;
+        font-size: 14px;
+      }
+
 
       .card-att,
       .card-hp,
@@ -37,12 +46,23 @@
         border: 1px solid black;
       }
 
+
+      .card-cost {
+        bottom:auto;
+        top:0;
+        left:0;
+        background-color: blue;
+      }
+
       .card-att {
         left: 0;
+        background-color: yellow;
       }
 
       .card-hp {
         right: 0;
+        background-color: red;
+        color:white;
       }
     </style>
   </head>
