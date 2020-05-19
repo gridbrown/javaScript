@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var value = 0;
+      var obj = {
+        value: 1,
+        setValue: function () {
+          this.value = 2; // 2.메서드를 호출했기 때문에, obj.value를 가리킴. =2
+          (function () {
+            this.value = 3; //3. 함수내부이기 때문에 이것은 window.value=3 이다. => 전역value=3
+          })();
+        },
+      };
+      obj.setValue(); //1.메서드 호출
+      console.log(value); // (window.value) 3
+      console.log(obj.value); // (obj.value) 2
+
+      //4. 내부에 this를 쓰고싶어! => 내부에 {} 해준다.
+
+      var value = 0;
+      var obj = {
+        value: 1,
+        setValue: function () {
+          this.value = 2;
+          {
+            this.value = 3;
+          }
+        },
+      };
+    </script>
+  </body>
+</html>
