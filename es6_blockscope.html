@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //for문에서 조건문 let선언하면 밖에서 출력 안됨
+      //그냥 그 역할로 끝난다. 그러나 var i 였다면 i는 출력이 된다.
+      var sum = 0;
+      for (let i = 1; i < 10; i++) {
+        sum += 1;
+      }
+      console.log(sum);
+      console.log(i);
+    </script>
+  </body>
+</html>
