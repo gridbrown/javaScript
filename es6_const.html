@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //const A; --> const는 상수이기때문에, 선언과 동시에 값을 입력해줘야 한다. 안그러면 에러
+
+      const s = 10;
+      //s = 12; --> 이렇게 하면 에러뜸. 왜? const라서 !
+      const OBJ = {
+        prop1: 1,
+        prop2: 2,
+      };
+      OBJ.prop1 = 3;
+      console.log(s);
+      console.log(OBJ.prop1); //3
+      //OBJ안의 것들은 상수가아니라, OBJ가 가리키고있는 프로퍼티인 prop들 인것이다.
+      //안에있는 객체들은 언제든 바꿀 수 있다.
+
+      let a = { a: 1 };
+      const b = a;
+      a = 20;
+      console.log("a: " + a); //20
+      console.log("b:" + b); //{a:1}
+      //b를 저렇게 선언하는 순간, 더이상 변하지 않는다.
+
+      const ARR = [0, 1, 2];
+      ARR.push(3);
+      console.log(ARR); //[0, 1, 2, 3]
+      delete ARR[0];
+      console.log(ARR); //[empty, 1, 2, 3]
+    </script>
+  </body>
+</html>

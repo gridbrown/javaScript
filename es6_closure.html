@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        border-collapse: collapse;
+        padding: 10px 0 10px 20px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>javascript</li>
+      <li>java</li>
+      <li>python</li>
+      <li>go</li>
+    </ul>
+    <script>
+      var list = document.querySelectorAll("li");
+      for (let i = 0; i < list.length; i++) {
+        list[i].addEventListener("click", function () {
+          console.log(i + "번째");
+        });
+      }
+      //var i 로 돌리면 클로저로 인해 4번째만 찍힌다.
+      //let으로 하면 블록스코프로인해 정상으로 찍힌다.
+    </script>
+  </body>
+</html>
