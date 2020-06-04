@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var obj = {
+        prop1: 1,
+        prop2: 2,
+        prop3: 3,
+      };
+
+      for (const prop in obj) {
+        //const인데 가능하다. 예외적인 느낌.
+        console.log(prop);
+      }
+      //prop -> prop1
+      //prop -> prop2
+      //prop -> prop3 할당
+
+      for (const i = 0; i < 5; i++) {
+        //불가능하다.
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>

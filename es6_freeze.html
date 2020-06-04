@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const OBJ2 = {
+        prop1: 1,
+        prop2: [1, 2, 3],
+      };
+      Object.freeze(OBJ2);
+      OBJ2.prop2 = 10;
+      console.log(OBJ2); // prop2: [1, 2, 3]
+      OBJ2.prop2[1] = 20;
+      console.log(OBJ2); // prop2: [1, 20, 3]
+
+      // Obj 자체를 얼린다.
+      // Obj 내부의 프로퍼티들을 순회하면서, 혹시 참조형이면, 1)반복 -> 재귀.
+      // 이 과정을 DeepFreezing 이라고 한다.
+
+      var a = {
+        a: 1,
+        b: [1, 2, 3],
+        c: { d: 1, e: 2 },
+      };
+      var b = Object.assign({}, a);
+      console.log(b);
+      b.b[1] = 20;
+      console.log(a.b); //b의 b를 바꿨는데, a의 b도 같이 바껴버린다.(얕은복사)
+
+      //얕은복사: 객체의 프로퍼티들을 복사 (depth 1단계까지만)
+
+      b.b = Object.assign([], a.b);
+      //깊은복사를 해야만 immutable 하다.
+      //깊은복사: 객체의 프로퍼티들을 복사 (모든 depth에 대해서)
+    </script>
+  </body>
+</html>
