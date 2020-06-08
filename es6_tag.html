@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //tag 함수
+      const tag = function (strs, arg1, arg2) {
+        //문자가 들어가고, 숫자가 들어간다.
+        return { strs: strs, args: [arg1, arg2] };
+      };
+      const res = tag`순서가 ${1}이렇게 ${2}`;
+      console.log(res);
+
+      // args: Array(2)
+      //0: 1
+      // 1: 2
+      // length: 2
+      // __proto__: Array(0)
+
+      // strs: Array(3)
+      // 0: "순서가 "
+      // 1: "이렇게 "
+      // 2: ""
+
+      //String.raw - 줄바꿈도 그대로 출력됨
+      console.log(String.raw`순서가 ${1}이렇게 ${2}\n\n`);
+      //순서가 1이렇게 2\n\n
+      console.log(`순서가 ${1}이렇게 ${2}\n\n`);
+      //순서가 1이렇게 2
+
+      //String.raw도 tag함수다.
+    </script>
+  </body>
+</html>

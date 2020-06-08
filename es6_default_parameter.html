@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1
+      function a(a = 1, b = 2, c = 3) {
+        //인자 안에 이렇게 넣을 수 있게됨
+        console.log(a, b, c); //1,2,3
+      }
+
+      function a(a = 1, b = c + 1, c = 3) {
+        //c의 순서때문에 작동안됨
+        console.log(a, b, c); //c is not defined
+      }
+
+      //let 선언과 동일하다.
+      //그래서 TDZ에 걸릴 수 있다.
+
+      //2
+      const a = function (a = 1, b = 2, c = 3) {
+        console.log(arguments); //[0:1, 1:2, 2:3, length:3]
+        console.log(a, b, c);
+        //유사배열객체: 객체인데, 각 프로퍼티의 키가 인덱스이고, length라는 프로퍼티가 있는 객체
+        //귀찮은놈! 대체할 수 있는 것이 있다.
+      };
+
+      //3
+      function f(x, y, ...z) {
+        //...을 이용하면 쉽게 가능하다. x,y를 뺀 나머지를 배열로
+        console.log(z);
+      }
+      f(1, 2, true, null, undefined, 10);
+      //[true, null, undefined, 10]
+
+      //4
+      function f(...z) {
+        // 모두 배열로
+        console.log(z);
+      }
+      f(1, 2, true, null, undefined, 10);
+    </script>
+  </body>
+</html>
