@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.
+      const obj = {
+        a() {
+          console.log(this);
+
+          const b = () => {
+            console.log(this); //a를 가리킨다. 화살표함수= lite하다고 생각하면됨.
+          };
+          b();
+        },
+      };
+      obj.a();
+
+      // 2.
+      const b = function () {
+        var x = 10;
+      };
+      b();
+      console.log(x); // 갇혀서 출력안됨
+
+      const c = () => {
+        var y = 10;
+      };
+      c();
+      console.log(y); //출력안됨
+    </script>
+  </body>
+</html>

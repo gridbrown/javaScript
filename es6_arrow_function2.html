@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 3.
+
+      const obj = {
+        grades: [80, 90, 100],
+        getTotal: function () {
+          this.total = 0;
+          this.grades.forEach(function (v) {
+            this.total += v; //여기서 this는 window
+          }, this);
+        },
+      };
+      obj.getTotal();
+      console.log(total);
+    </script>
+  </body>
+</html>
