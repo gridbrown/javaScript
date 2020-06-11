@@ -15,11 +15,40 @@
           this.total = 0;
           this.grades.forEach(function (v) {
             this.total += v; //여기서 this는 window
-          }, this);
+          });
         },
       };
       obj.getTotal();
-      console.log(total);
+      console.log(total); //NaN
+      console.log(obj.total);
+
+      // 4.
+      const obj2 = {
+        grades: [80, 90, 100],
+        getTotal: function () {
+          this.total = 0;
+          this.grades.forEach(function (v) {
+            //그냥 function으로 할때는 이렇게 this를 바인딩 해야했다.
+            this.total += v;
+          }, this); //this를 바인딩(내가알고있는 그 this를 써라.)
+        },
+      };
+      obj2.getTotal();
+      console.log(obj2.total); //270
+
+      // 5.
+      const obj3 = {
+        grades: [80, 90, 100],
+        getTotal: function () {
+          this.total = 0;
+          this.grades.forEach((v) => {
+            //화살표함수 쓸때는 forEach에서 바인딩 생각하지 않아도 된다.
+            this.total += v;
+          });
+        },
+      };
+      obj3.getTotal();
+      console.log(obj3.total); //270
     </script>
   </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const deliveryProduct = {
+        orderedDate: "2018-01-15",
+        estimatedDate: "2018-01-20",
+        status: "배송중",
+        items: [
+          { name: "사과", price: 1000, quantity: 3 },
+          { name: "배", price: 1500, quantity: 2 },
+        ],
+      };
+      //deliveryProduct.orderDate === ? 예전엔 이런식으로 했었다.
+      //이젠 이렇게 쉽게 할수있다.
+      const {
+        estimatedDate: esti,
+        status,
+        items: [, ...products],
+      } = deliveryProduct;
+
+      console.log(esti, status, products);
+    </script>
+  </body>
+</html>
